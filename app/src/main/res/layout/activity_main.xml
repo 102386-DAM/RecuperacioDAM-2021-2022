@@ -18,56 +18,48 @@
         tools:context=".MainActivity">
 
         <Button
-            android:id="@+id/button_play"
+            android:id="@+id/button_send"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Play"
             android:onClick="goToGameBoard"
+            android:text="Enviar"
+            android:textColor="#D1C4E9"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintEnd_toEndOf="@+id/editTextNumber"
+            app:layout_constraintHorizontal_bias="0.728"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.606"
+            app:layout_constraintVertical_bias="0.544"
             tools:ignore="MissingConstraints" />
 
-        <Button
-            android:id="@+id/button_plus"
+        <EditText
+            android:id="@+id/editTextNumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="96dp"
-            android:text="+ vida"
+            android:ems="10"
+            android:inputType="number"
+            android:text=""
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteY="484dp"/>
-
-        <Button
-            android:id="@+id/button_minus"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="236dp"
-            android:text="- vida"
-            app:layout_constraintEnd_toEndOf="parent"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteY="484dp" />
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:backgroundTint="#E91E63"
-            android:layout_width="48dp"
-            android:layout_height="41dp"
-            app:srcCompat="@drawable/cor"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.386"
             tools:ignore="MissingConstraints" />
 
         <TextView
-            android:id="@+id/lives"
-            android:layout_width="103dp"
-            android:layout_height="35dp"
-            tools:ignore="MissingConstraints"
-            android:text="0"
-            app:layout_constraintTop_toBottomOf="@+id/imageView"/>
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=''
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/button_send"
+            app:layout_constraintHorizontal_bias="0.82"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.688"
+            tools:ignore="MissingConstraints" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

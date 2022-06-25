@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModelProvider;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.udl.tidic.recuperaciodam_2021_2022.databinding.ActivityMainBinding;
 import com.udl.tidic.recuperaciodam_2021_2022.utils.PreferenceProvider;
@@ -24,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
 
         PreferenceProvider.init(this);
 
-        // @Jordi: Bind the xml with the activity (ActivityLevelsBinding is auto generated).
         activityMainBinding = ActivityMainBinding.inflate(getLayoutInflater());
 
         // Set the Content of the xml to the view
@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         mainViewModel = new ViewModelProvider(this).get(MainViewModel.class);
 
         setUp();
+
     }
 
 
