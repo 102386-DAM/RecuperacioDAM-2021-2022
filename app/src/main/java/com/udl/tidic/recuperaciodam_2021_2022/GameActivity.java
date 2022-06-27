@@ -27,12 +27,14 @@ public class GameActivity extends AppCompatActivity {
 
         activityGameBinding = ActivityGameBinding.inflate(getLayoutInflater());
 
+
+
         // Set the Content of the xml to the view
         setContentView(activityGameBinding.getRoot());
 
         // Set the viewModel
         gameViewModel = new ViewModelProvider(this).get(GameViewModel.class);
-
+        gameViewModel.dinersLiveData1.setValue(PreferenceProvider.providePreferences().getString("money", "blanc"));
         setUp();
 
     }

@@ -4,6 +4,7 @@ import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -39,12 +40,26 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void setUp() {
+
         activityMainBinding.setViewModel(mainViewModel);
         activityMainBinding.setLifecycleOwner(this);
 
     }
 
     public void goToGameBoard(View view){
-        startActivity( new Intent(this, GameActivity.class));
+        PreferenceProvider.providePreferences().edit().putString("money", mainViewModel.dinersLiveData.getValue()).commit();
+
+        if(mainViewModel.dinersLiveData.getValue().isEmpty()){
+
+            Context context = getApplicationContext();
+            CharSequence textError = "ESTIC APROBAT";
+            int duration = Toast.LENGTH_SHORT;
+            Toast toast = Toast.makeText(context, textError, duration);
+            toast.show();
+
+        }else{
+
+            startActivity( new Intent(this, GameActivity.class));}
+
     }
 }
